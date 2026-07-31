@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre de tu Proyecto - Club STEAM VCP</title>
+
+    <style>
+        /* =======================================================
+           2. PALETA DE COLORES Y CONFIGURACIÓN GENERAL
+           Cambia los códigos de color (#HEX) para personalizar la página.
+           ======================================================= */
+        :root {
+            --bg-color: #fdfaf3;         /* Color de fondo principal */
+            --card-bg: #ffffff;          /* Fondo de tarjetas y tablas */
+            --text-main: #333333;        /* Color de texto principal */
+            --text-light: #555555;       /* Color de texto secundario */
+            --accent-orange: #f5a623;    /* Color de acento 1 (Títulos cortos, números) */
+            --accent-yellow: #ffb703;    /* Color de acento 2 (Etiquetas, alertas) */
+            --border-light: #eaddcb;     /* Color de bordes y divisiones */
+            --code-bg: #2d2d2d;          /* Fondo para el bloque de código */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- ENCABEZADO E IMAGEN PRINCIPAL --- */
+        .hero-img {
+            width: 100%;
+            max-height: 450px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: var(--accent-yellow);
+            color: #111;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        /* --- SECCIONES Y DIVISIONES --- */
+        section {
+            margin-bottom: 30px;
+        }
+
+        .section-label {
+            color: var(--accent-orange);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-light);
+            margin: 35px 0;
+        }
+
+        /* --- TABLA DE MATERIALES --- */
+        .materials-table {
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+        }
+
+        .materials-table th, .materials-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .materials-table th {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 600;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        /* --- GALERÍA / EVIDENCIA --- */
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .evidence-img {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- INSTRUCTIVO (PASO A PASO) --- */
+        .step-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: var(--accent-orange);
+            color: white;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step-title {
+            font-weight: 700;
+            margin: 0 0 5px 0;
+        }
+
+        .step-desc {
+            margin: 0;
+            color: var(--text-light);
+        }
+
+        /* --- CÓDIGO Y ALERTAS --- */
+        .code-block {
+            background-color: var(--code-bg);
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            white-space: pre-wrap;
+        }
+
+        .alert-box {
+            background-color: #fff9e6;
+            border-left: 4px solid var(--accent-yellow);
+            color: #333;
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .todo-box {
+            background-color: #fffaf0;
+            border: 2px dashed var(--accent-orange);
+            border-radius: 10px;
+            padding: 15px 20px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .todo-title {
+            color: var(--accent-orange);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        /* --- VIDEO CONTAINER --- */
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe, .video-container video {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <img src="foto-portada.jpg" alt="Foto principal del proyecto" class="hero-img">
+
+    <div class="tags">
+        <span class="tag">R-01</span>
+        <span class="tag">Robótica</span>
+        <span class="tag">ESP32</span>
+    </div>
+
+    <h1>[Nombre del Proyecto]</h1>
+    <p class="subtitle">[Escribe aquí una breve descripción en 1 o 2 oraciones sobre qué hace tu proyecto].</p>
+    
+    <div class="author-info">
+        <span>Creado por: <strong>[Nombre del Autor/Grupo]</strong></span>
+        <span>•</span>
+        <span>Club STEAM VCP</span>
+        <span>•</span>
+        <span>[Fecha]</span>
+    </div>
+
+    <hr>
+
+    <section>
+        <div class="section-label">01 · LA IDEA</div>
+        <h2>¿Qué problema resuelve o cuál es el objetivo?</h2>
+        <p>[Explica brevemente por qué decidieron hacer este proyecto y qué aprendizaje buscaban lograr].</p>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="section-label">02 · FUNCIONAMIENTO</div>
+        <h2>¿Cómo funciona?</h2>
+        <p>[Describe el funcionamiento lógico del proyecto. Por ejemplo: sensores que lee, modos de operación, conexión Bluetooth/Wi-Fi, etc.]</p>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="section-label">03 · LISTA DE MATERIALES</div>
+        <h2>¿Qué se necesita para construirlo?</h2>
+        
+        <table class="materials-table">
+            <thead>
+                <tr>
+                    <th>MATERIAL / HERRAMIENTA</th>
+                    <th>CANTIDAD</th>
+                    <th>NOTAS / ESPECIFICACIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[Componente 1]</td>
+                    <td>1</td>
+                    <td>[Descripción o modelo]</td>
+                </tr>
+                <tr>
+                    <td>[Componente 2]</td>
+                    <td>2</td>
+                    <td>[Descripción o modelo]</td>
+                </tr>
+                <tr>
+                    <td>[Componente 3]</td>
+                    <td>1</td>
+                    <td>[Descripción o modelo]</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="section-label">04 · EVIDENCIA</div>
+        <h2>Fotos y Diagramas</h2>
+        <div class="evidence-grid">
+            <img src="foto1.jpg" alt="Evidencia 1" class="evidence-img">
+            <img src="foto2.jpg" alt="Evidencia 2" class="evidence-img">
+            <img src="foto3.jpg" alt="Evidencia 3" class="evidence-img">
+            <img src="foto4.jpg" alt="Evidencia 4" class="evidence-img">
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="section-label">05 · INSTRUCTIVO</div>
+        <h2>Paso a paso para replicarlo</h2>
+        
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <div class="step-title">Preparación e Integración Física</div>
+                <p class="step-desc">[Explicación del armado del chasis, estructura o montaje de componentes].</p>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <div class="step-title">Conexiones Eléctricas</div>
+                <p class="step-desc">[Explicación de los pines utilizados en el microcontrolador y cableado].</p>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <div class="step-title">Carga del Código</div>
+                <p class="step-desc">[Instrucciones para subir el firmware o programa al dispositivo].</p>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <div class="step-title">
+Controlalo desde el celular</div>
+                <p class="step-desc">Como se maneja </p>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="section-label">06 · CÓDIGO Y ARCHIVOS</div>
+        <h2>Código fuente principal</h2>
+        <p>A continuación se presenta el código listo para subir:</p>
+        
+        <pre class="code-block"><code>// Pega tu código del robot
+void setup() {
+  // Configuración inicial
+}
+
+void loop() {
+  // Bucle principal
+}</code></pre>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="section-label">07 · APRENDIZAJES Y RETOS</div>
+        <h2>Desafíos superados</h2>
+        <div class="alert-box">
+            <strong>💡 Lección principal:</strong> [Escribe aquí el principal aprendizaje técnico o problema que lograron resolver durante la construcción].
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="section-label">08 · PRÓXIMOS PASOS</div>
+        <h2>Posibles mejoras futuras</h2>
+        <div class="todo-box">
+            <div class="todo-title">📌 Mejoras</div>
+            [Ejemplo: Agregar sensores extra, mejorar el diseño, añadir control por app, etc.]
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="section-label">09 · CRÉDITOS</div>
+        <h2>Agradecimientos</h2>
+        <p>Completar</p>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="section-label">10 · DEMOSTRACIÓN</div>
+        
+        <div class="video-container">
+            <iframe src=" allowfullscreen></iframe>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
