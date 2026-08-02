@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nombre de tu Proyecto - Club STEAM VCP</title>
+    <title>Tropibot - Club STEAM VCP</title>
 
     <style>
         /* =======================================================
            2. PALETA DE COLORES Y CONFIGURACIÓN GENERAL
-           Cambia los códigos de color (#HEX) para personalizar la página.
            ======================================================= */
         :root {
             --bg-color: #fdfaf3;         /* Color de fondo principal */
             --card-bg: #ffffff;          /* Fondo de tarjetas y tablas */
             --text-main: #333333;        /* Color de texto principal */
             --text-light: #555555;       /* Color de texto secundario */
-            --accent-orange: #f5a623;    /* Color de acento 1 (Títulos cortos, números) */
-            --accent-yellow: #ffb703;    /* Color de acento 2 (Etiquetas, alertas) */
+            --accent-orange: #f5a623;    /* Color de acento 1 */
+            --accent-yellow: #ffb703;    /* Color de acento 2 */
             --border-light: #eaddcb;     /* Color de bordes y divisiones */
             --code-bg: #2d2d2d;          /* Fondo para el bloque de código */
         }
@@ -244,7 +243,7 @@
 
 <div class="container">
 
-    <img src="foto-portada.jpg" alt="Foto principal del proyecto" class="hero-img">
+    <img src="foto-portada.jpg" alt="Foto principal del proyecto Tropibot" class="hero-img">
 
     <div class="tags">
         <span class="tag">R-01</span>
@@ -252,15 +251,14 @@
         <span class="tag">ESP32</span>
     </div>
 
-    <h1>[Nombre del Proyecto]</h1>
-    <p class="subtitle">[Escribe aquí una breve descripción en 1 o 2 oraciones sobre qué hace tu proyecto].</p>
+    <h1>Tropibot</h1>
+    <p class="subtitle">Robot controlado mediante Bluetooth con un microcontrolador ESP32</p>
     
     <div class="author-info">
-        <span>Creado por: <strong>[Nombre del Autor/Grupo]</strong></span>
         <span>•</span>
         <span>Club STEAM VCP</span>
         <span>•</span>
-        <span>[Fecha]</span>
+        <span>01/08/2026</span>
     </div>
 
     <hr>
@@ -268,7 +266,7 @@
     <section>
         <div class="section-label">01 · LA IDEA</div>
         <h2>¿Qué problema resuelve o cuál es el objetivo?</h2>
-        <p>[Explica brevemente por qué decidieron hacer este proyecto y qué aprendizaje buscaban lograr].</p>
+        <p>El objetivo principal de este robot fue aprender a programar un microcontrolador y comprender el ensamblaje de sus componentes mecánicos y electrónicos.</p>
     </section>
 
     <hr>
@@ -276,7 +274,7 @@
     <section>
         <div class="section-label">02 · FUNCIONAMIENTO</div>
         <h2>¿Cómo funciona?</h2>
-        <p>[Describe el funcionamiento lógico del proyecto. Por ejemplo: sensores que lee, modos de operación, conexión Bluetooth/Wi-Fi, etc.]</p>
+        <p>El robot se conecta mediante Bluetooth a un dispositivo móvil (celular). A través de una aplicación, recibe comandos en tiempo real para desplazarse (avanzar, retroceder, girar a la izquierda o derecha) y regular su velocidad. Además, incluye luces LED decorativas instaladas en la parte inferior del robot para darle iluminación inferior.</p>
     </section>
 
     <hr>
@@ -295,19 +293,39 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>[Componente 1]</td>
+                    <td>Placa ESP32</td>
                     <td>1</td>
-                    <td>[Descripción o modelo]</td>
+                    <td>Microcontrolador con Bluetooth integrado</td>
                 </tr>
                 <tr>
-                    <td>[Componente 2]</td>
+                    <td>Puente H (L298N)</td>
+                    <td>1</td>
+                    <td>Módulo para controlar dirección y velocidad de los motores</td>
+                </tr>
+                <tr>
+                    <td>Motores reductores DC</td>
                     <td>2</td>
-                    <td>[Descripción o modelo]</td>
+                    <td>Incluyen sus respectivas ruedas</td>
                 </tr>
                 <tr>
-                    <td>[Componente 3]</td>
+                    <td>Protoboard</td>
                     <td>1</td>
-                    <td>[Descripción o modelo]</td>
+                    <td>Base para realizar las conexiones sin soldadura</td>
+                </tr>
+                <tr>
+                    <td>Sensor ultrasónico (HC-SR04)</td>
+                    <td>1</td>
+                    <td>Encargado de detectar obstáculos frontales</td>
+                </tr>
+                <tr>
+                    <td>Baterías modificadas</td>
+                    <td>2</td>
+                    <td>Suministran la energía eléctrica al robot</td>
+                </tr>
+                <tr>
+                    <td>Módulo de alimentación para protoboard</td>
+                    <td>1</td>
+                    <td>Regula el voltaje adecuado desde las baterías hacia el circuito</td>
                 </tr>
             </tbody>
         </table>
@@ -319,8 +337,8 @@
         <div class="section-label">04 · EVIDENCIA</div>
         <h2>Fotos y Diagramas</h2>
         <div class="evidence-grid">
-            <img src="foto1.jpg" alt="Evidencia 1" class="evidence-img">
-            <img src="foto2.jpg" alt="Evidencia 2" class="evidence-img">
+            <img src="Robotmarti.jpeg" alt="Evidencia 1" class="evidence-img">
+            <img src="Robotmarti2.jpeg" alt="Evidencia 2" class="evidence-img">
             <img src="foto3.jpg" alt="Evidencia 3" class="evidence-img">
             <img src="foto4.jpg" alt="Evidencia 4" class="evidence-img">
         </div>
@@ -335,8 +353,8 @@
         <div class="step-card">
             <div class="step-number">1</div>
             <div class="step-content">
-                <div class="step-title">Preparación e Integración Física</div>
-                <p class="step-desc">[Explicación del armado del chasis, estructura o montaje de componentes].</p>
+                <div class="step-title">Conseguí los materiales y armá el chasis</div>
+                <p class="step-desc">Reunimos todos los componentes necesarios. Fijamos los motores reductores a la estructura del chasis y revisamos el diagrama de pines (*pinout*) del ESP32 para verificar qué conexiones utilizaremos.</p>
             </div>
         </div>
 
@@ -344,7 +362,7 @@
             <div class="step-number">2</div>
             <div class="step-content">
                 <div class="step-title">Conexiones Eléctricas</div>
-                <p class="step-desc">[Explicación de los pines utilizados en el microcontrolador y cableado].</p>
+                <p class="step-desc">Conectamos el ESP32 al puente H para el control de los motores, vinculamos el sensor ultrasónico a los pines digitales correspondientes y cableamos las tiras LED. Finalmente, alimentamos la protoboard mediante el módulo regulador acoplado a las baterías.</p>
             </div>
         </div>
 
@@ -352,16 +370,15 @@
             <div class="step-number">3</div>
             <div class="step-content">
                 <div class="step-title">Carga del Código</div>
-                <p class="step-desc">[Instrucciones para subir el firmware o programa al dispositivo].</p>
+                <p class="step-desc">Abrimos el IDE de Arduino, configuramos la placa ESP32, seleccionamos el puerto COM correcto y cargamos el código que gestiona la comunicación Bluetooth y el control del puente H.</p>
             </div>
         </div>
 
         <div class="step-card">
             <div class="step-number">4</div>
             <div class="step-content">
-                <div class="step-title">
-Controlalo desde el celular</div>
-                <p class="step-desc">Como se maneja </p>
+                <div class="step-title">Controlalo desde el celular</div>
+                <p class="step-desc">Vinculamos el smartphone al Bluetooth del ESP32 mediante una aplicación de control (como Serial Bluetooth Terminal o Dabble) y enviamos los comandos para probar el movimiento del robot.</p>
             </div>
         </div>
     </section>
@@ -371,16 +388,156 @@ Controlalo desde el celular</div>
     <section>
         <div class="section-label">06 · CÓDIGO Y ARCHIVOS</div>
         <h2>Código fuente principal</h2>
-        <p>A continuación se presenta el código listo para subir:</p>
+        <p>A continuación se presenta el código base listo para subir al ESP32 utilizando la librería de Bluetooth Serial:</p>
         
-        <pre class="code-block"><code>// Pega tu código del robot
+        <pre class="code-block"><code>
+            #include "BluetoothSerial.h"
+BluetoothSerial SerialBT;
+
+// --- Pines del Puente H (L9110s) ---
+const int MA_F = 16;
+const int MA_B = 17;
+const int MB_F = 18;
+const int MB_B = 19;
+
+// --- PWM ---
+const int freq       = 1000;
+const int resolution = 8;
+
+// --- Variables de control ---
+int  velocity        = 180;
+char lastCmd         = 'S';
+
+// --- Lectura de velocidad no bloqueante ---
+String velBuffer  = "";
+bool   readingVel = false;
+
+// --- Prototipos ---
+void movement(char c);
+void stopAll();
+bool isValidCmd(char c);
+
+// ============================================================
+//  SETUP
+// ============================================================
 void setup() {
-  // Configuración inicial
+  Serial.begin(115200);
+  SerialBT.begin("TropiBot");
+
+  ledcAttach(MA_F, freq, resolution);
+  ledcAttach(MA_B, freq, resolution);
+  ledcAttach(MB_F, freq, resolution);
+  ledcAttach(MB_B, freq, resolution);
+
+  movement('S');
+  SerialBT.println("Robot listo! Comandos: F, B, L, R, S, V+numero");
 }
 
+// ============================================================
+//  LOOP
+// ============================================================
 void loop() {
-  // Bucle principal
-}</code></pre>
+
+  if (!SerialBT.available()) {
+    delay(10);
+    return;
+  }
+
+  char cmd = SerialBT.read();
+
+  if (cmd == '\r' || cmd == '\n') {
+    if (readingVel) {
+      readingVel = false;
+      if (velBuffer.length() > 0) {
+        velocity  = constrain(velBuffer.toInt(), 0, 255);
+        velBuffer = "";
+        SerialBT.printf("Velocidad: %d\n", velocity);
+        if (lastCmd != 'S' && isValidCmd(lastCmd)) movement(lastCmd);
+      }
+    }
+    return;
+  }
+
+  cmd = toupper(cmd);
+
+  // --- Modo lectura de velocidad no bloqueante ---
+  if (readingVel) {
+    if (isDigit(cmd)) {
+      velBuffer += cmd;
+      if (velBuffer.length() >= 3) {
+        readingVel = false;
+        velocity   = constrain(velBuffer.toInt(), 0, 255);
+        velBuffer  = "";
+        SerialBT.printf("Velocidad: %d\n", velocity);
+        if (lastCmd != 'S' && isValidCmd(lastCmd)) movement(lastCmd);
+      }
+    } else {
+      readingVel = false;
+      velBuffer  = "";
+    }
+  }
+
+  if (cmd == 'V') {
+    readingVel = true;
+    velBuffer  = "";
+    return;
+  }
+
+  if (!isValidCmd(cmd)) {
+    SerialBT.println("Comando no reconocido. Usa: F, B, L, R, S, V+numero");
+    return;
+  }
+
+  lastCmd = cmd;
+  movement(cmd);
+}
+
+// ============================================================
+//  VALIDACIÓN
+// ============================================================
+bool isValidCmd(char c) {
+  return (c == 'F' || c == 'B' || c == 'L' || c == 'R' || c == 'S');
+}
+
+// ============================================================
+//  MOTORES
+// ============================================================
+void stopAll() {
+  ledcWrite(MA_F, 0);
+  ledcWrite(MB_F, 0);
+  ledcWrite(MA_B, 0);
+  ledcWrite(MB_B, 0);
+}
+
+void movement(char c) {
+  stopAll();
+  switch (c) {
+    case 'F':
+      ledcWrite(MA_F, velocity);
+      ledcWrite(MB_F, velocity);
+      SerialBT.println("Avanzando");
+      break;
+    case 'B':
+      ledcWrite(MA_B, velocity);
+      ledcWrite(MB_B, velocity);
+      SerialBT.println("Retrocediendo");
+      break;
+    case 'L':
+      ledcWrite(MA_F, velocity);
+      ledcWrite(MB_B, velocity);
+      SerialBT.println("Girando izquierda");
+      break;
+    case 'R':
+      ledcWrite(MA_B, velocity);
+      ledcWrite(MB_F, velocity);
+      SerialBT.println("Girando derecha");
+      break;
+    case 'S':
+      SerialBT.println("Detenido");
+      break;
+  }
+}
+</code></pre>
     </section>
 
     <hr>
@@ -389,7 +546,7 @@ void loop() {
         <div class="section-label">07 · APRENDIZAJES Y RETOS</div>
         <h2>Desafíos superados</h2>
         <div class="alert-box">
-            <strong>💡 Lección principal:</strong> [Escribe aquí el principal aprendizaje técnico o problema que lograron resolver durante la construcción].
+            <strong>💡 Lección principal:</strong> Lo más difícil fue identificar un cortocircuito en el cableado de la protoboard que impedía que el robot funcionara correctamente. Aprender a testear las conexiones con cuidado ayudó a resolver el problema.
         </div>
     </section>
 
@@ -418,7 +575,7 @@ void loop() {
         <div class="section-label">10 · DEMOSTRACIÓN</div>
         
         <div class="video-container">
-            <iframe src=" allowfullscreen></iframe>
+            <iframe src="" allowfullscreen></iframe>
         </div>
     </section>
 
